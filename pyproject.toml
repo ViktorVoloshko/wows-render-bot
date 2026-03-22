@@ -1,0 +1,17 @@
+[project]
+name = "wows-render-bot"
+version = "0.1.0"
+requires-python = "~=3.13.0"
+dependencies = [
+    "py-cord>=2.7.1",
+    "python-dotenv>=1.2.2",
+    "aiodns>=4.0.0",
+    "brotlipy>=0.7.0",
+    "msgspec>=0.20.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.7",
+    "ty>=0.0.24",
+]

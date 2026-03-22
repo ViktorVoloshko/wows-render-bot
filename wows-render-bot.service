@@ -1,0 +1,17 @@
+[Unit]
+Description=WoWS Renderer Bot
+After=network.target
+
+[Service]
+User=USERNAME
+Group=root
+WorkingDirectory=
+Restart=always
+RestartSec=15
+Environment=PATH=""
+Environment=VIRTUAL_ENV=
+Environment=PYTHONPATH=
+ExecStart=venv/bin/python -OO main.py
+
+[Install]
+WantedBy=multi-user.target

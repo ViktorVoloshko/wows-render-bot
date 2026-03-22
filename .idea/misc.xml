@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="uv (discord-test)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="uv (wows-render-bot)" project-jdk-type="Python SDK" />
+  <component name="RuffConfiguration">
+    <option name="enabled" value="true" />
+  </component>
+  <component name="TyConfiguration">
+    <option name="enabled" value="true" />
+    <option name="inlayHints" value="false" />
+  </component>
+</project>
