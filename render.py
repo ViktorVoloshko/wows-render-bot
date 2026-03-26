@@ -20,8 +20,6 @@ async def render_replay(replay_path: Path, video_path: Path, filesize_limit: int
             "--extracted-dir",
             "wows_extr",
             "--dump-frames",
-            "-o",
-            "temp.mp4",
             replay_path,
             stdout=frames_write,
             stderr=asyncio.subprocess.PIPE,
