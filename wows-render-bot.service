@@ -4,13 +4,12 @@ After=network.target
 
 [Service]
 User=USERNAME
-Group=root
+Group=GROUP
 WorkingDirectory=
 Restart=always
 RestartSec=15
 Environment=PATH=""
 Environment=VIRTUAL_ENV=
-Environment=PYTHONPATH=
 ExecStart=venv/bin/python -OO main.py
 
 [Install]
