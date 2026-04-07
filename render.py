@@ -48,19 +48,16 @@ async def render_replay(replay_path: Path, video_path: Path, filesize_limit: int
             stderr=asyncio.subprocess.PIPE,
         )
 
+        _, stderr = await renderer_proc.communicate()
         os.close(frames_write)
-        os.close(frames_read)
-
-        stdout, stderr = await renderer_proc.communicate()
         if renderer_proc.returncode != 0:
             logging.error(f"{renderer_proc!r} failed\nstderr\n{stderr.decode()}")
             raise SubprocessError("minimap_renderer failed")
 
-        stdout, stderr = await ffmpeg_proc.communicate()
+        _, stderr = await ffmpeg_proc.communicate()
+        os.close(frames_read)
         if ffmpeg_proc.returncode != 0:
-            logging.error(
-                f"{ffmpeg_proc!r} failed\nstdout\n{stdout.decode()}\nstderr\n{stderr.decode()}"
-            )
+            logging.error(f"{ffmpeg_proc!r} failed\nstderr\n{stderr.decode()}")
             raise SubprocessError("ffmpeg failed")
 
         if os.path.getsize(video_path) < filesize_limit:
