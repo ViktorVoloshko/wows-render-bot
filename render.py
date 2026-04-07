@@ -18,7 +18,7 @@ async def render_replay(replay_path: Path, video_path: Path, filesize_limit: int
             "minimap_renderer",
             "--cpu",
             "--extracted-dir",
-            "wows_extr",
+            "wows_extracted",
             "--dump-frames",
             replay_path,
             stdout=frames_write,
